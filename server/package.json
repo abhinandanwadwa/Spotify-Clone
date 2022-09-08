@@ -1,0 +1,11 @@
+{
+  "name": "discord-clone-server",
+  "version": "1.0.0",
+  "description": "Discord-Clone is a cloned app of Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhinandan",
+  "license": "ISC"
+}
