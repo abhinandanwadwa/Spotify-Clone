@@ -15,6 +15,8 @@ app.get('/', (req, res) => {
     res.send('Hi!');
 });
 
+app.use('/api/auth', require('./routes/auth'));
+
 // Starting The Server
 app.listen(PORT, () => {
     console.log(`The server is running on the PORT: ${PORT}`);
