@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './login.css'
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const backendApiURI = "http://localhost:8181/api";
+
+
+  const login = async (e) => {
+    e.preventDefault();
+    const respose = await fetch(`${backendApiURI}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    });
+    const json = await respose.json();
+    console.log(json);
+  }
+
   return (
     <>
     <div className="header flex justify-center items-center py-7">
@@ -22,15 +41,15 @@ const Login = () => {
         <div className="email-login py-3 flex flex-col justify-start items-start w-[100%]">
           <div className="input-wrapper my-5 flex flex-col w-[100%]">
             <label className='my-2 font-bold'>Email address</label>
-            <input type="email" placeholder='Email address' />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Email address' />
           </div>
           <div className="input-wrapper flex flex-col w-[100%]">
             <label className='my-2 font-bold'>Password</label>
-            <input type="password" placeholder='Password' />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Password' />
           </div>
           <p className='my-4 forgot'>Forgot Your Password?</p>
           <div className="buttonwrapper flex justify-end w-[100%]">
-            <button className='login-button bg-[#1ed760] p-[13px] w-[28%] rounded-3xl'>LOG IN</button>
+            <button onClick={login} className='login-button bg-[#1ed760] p-[13px] w-[28%] rounded-3xl'>LOG IN</button>
           </div>
           <hr className='w-[100%] my-6' />
           <p className='flex justify-center w-[100%] font-extrabold text-lg'>Don't have an account?</p>
