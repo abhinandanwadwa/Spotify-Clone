@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -9,6 +10,14 @@ const Login = () => {
   const backendApiURI = "http://localhost:8181/api";
 
   const navigate = useNavigate();
+
+
+
+  useEffect(() => {
+    if (localStorage.getItem('auth-token')) {
+      navigate('/');
+    }
+  }, []);
 
 
   const login = async (e) => {

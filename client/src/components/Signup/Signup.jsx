@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { json, Link, useNavigate } from 'react-router-dom';
 import './signup.css'
 
 const Signup = () => {
@@ -12,6 +13,13 @@ const Signup = () => {
 
     const navigate = useNavigate();
   
+
+    useEffect(() => {
+      if (localStorage.getItem('auth-token')) {
+        navigate('/');
+      }
+    }, []);
+    
   
     const register = async (e) => {
       e.preventDefault();
