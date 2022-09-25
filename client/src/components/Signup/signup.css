@@ -1,0 +1,45 @@
+input {
+    width: 100%;
+    border: 1px solid black;
+    padding: 14px;
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid black;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    /* letter-spacing: 2px; */
+    font-weight: 700;
+}
+
+.login-button:active {
+    background-color: #169c46;
+}
+
+.login-button:hover {
+    /* font-size: 17px; */
+    transform: scale(1.05);
+}
+
+.signup-button {
+    letter-spacing: 1px;
+}
+
+.signup-button:hover {
+    border: 1.5px solid black;
+}
+
+.g-button:hover {
+    transform: scale(1.05);
+}
+
+.login-link {
+    text-decoration: underline;
+}

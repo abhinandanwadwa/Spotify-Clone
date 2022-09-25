@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './login.css'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ const Login = () => {
     <hr className='text-black font-bold' />
 
     <div className="content-wrapper p-4 flex flex-col justify-center items-center">
-      <div className="content flex w-[33%] justify-center items-center flex-col">
+      <div className="content flex md:w-[33%] w-[100%] justify-center items-center flex-col">
         <button className='p-[10px] w-[100%] font-sans flex justify-center items-center rounded-full border-gray-500 border-solid border-[1px] mb-4'><img className='mx-2' width={20} src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="GoogleIcon" />Continue With Google</button>
         <div className="hr-wrapper flex w-[100%]">
           <hr className='w-[50%] justify-start items-start' />
@@ -49,11 +50,11 @@ const Login = () => {
           </div>
           <p className='my-4 forgot'>Forgot Your Password?</p>
           <div className="buttonwrapper flex justify-end w-[100%]">
-            <button onClick={login} className='login-button bg-[#1ed760] p-[13px] w-[28%] rounded-3xl'>LOG IN</button>
+            <button onClick={login} className='login-button bg-[#1ed760] p-[13px] md:w-[28%] w-[100%] rounded-3xl'>LOG IN</button>
           </div>
           <hr className='w-[100%] my-6' />
           <p className='flex justify-center w-[100%] font-extrabold text-lg'>Don't have an account?</p>
-          <button className='signup-button p-[10px] my-5 w-[100%] text-gray-500 font-bold font-sans flex justify-center items-center rounded-full border-gray-500 border-solid border-[1px] mb-4'>SIGN UP FOR SPOTIFY</button>
+          <Link to={'/signup'} className='signup-button p-[10px] my-5 w-[100%] text-gray-500 font-bold font-sans flex justify-center items-center rounded-full border-gray-500 border-solid border-[1px] mb-4'><a>SIGN UP FOR SPOTIFY</a></Link>
         </div>
       </div>
     </div>
