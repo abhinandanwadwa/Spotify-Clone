@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './signup.css'
 
 const Signup = () => {
@@ -9,6 +9,8 @@ const Signup = () => {
     const [password, setPassword] = useState("");
   
     const backendApiURI = "http://localhost:8181/api";
+
+    const navigate = useNavigate();
   
   
     const register = async (e) => {
@@ -22,7 +24,17 @@ const Signup = () => {
           body: JSON.stringify({ email, password, name })
         });
         const json = await response.json();
-        console.log(json);
+        if (json.authtoken) {
+          localStorage.setItem('auth-token', json.authtoken);
+          navigate('/');
+        }
+        else if (json.error) {
+          alert(json.error);
+          // console.log(json);
+        }
+        else if (json.errors) {
+          alert(json.errors[0].msg);
+        }
       }
       else {
         alert('Email and Confirm email should be same');

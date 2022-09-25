@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import './login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const backendApiURI = "http://localhost:8181/api";
+
+  const navigate = useNavigate();
 
 
   const login = async (e) => {
@@ -19,7 +21,13 @@ const Login = () => {
       body: JSON.stringify({ email, password })
     });
     const json = await respose.json();
-    console.log(json);
+    if (json.authtoken) {
+      localStorage.setItem('auth-token', json.authtoken);
+      navigate('/');
+    }
+    else {
+      alert('Incorrect Credentials!');
+    }
   }
 
   return (
