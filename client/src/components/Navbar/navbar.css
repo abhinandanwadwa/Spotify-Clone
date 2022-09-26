@@ -1,0 +1,28 @@
+.header {
+    position: sticky;
+    top: 0;
+}
+
+input::placeholder {
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+.upgrade-button {
+    border: 1px solid #727272;
+    color: white;
+    padding: 5px 14px;
+    font-size: 13px;
+    border-radius: 100px;
+    transition: all ease-in 0.05s;
+}
+
+.upgrade-button:hover {
+    transform: scale(1.05);
+    border: 1px solid white;
+    cursor: auto;
+}
+
+.profile-badge {
+    box-shadow: 0px 0px 0px 6px #232424;
+}

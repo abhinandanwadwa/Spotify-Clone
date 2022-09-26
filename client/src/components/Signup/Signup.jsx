@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import { json, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './signup.css'
 
 const Signup = () => {
@@ -18,12 +18,13 @@ const Signup = () => {
       if (localStorage.getItem('auth-token')) {
         navigate('/');
       }
+      // eslint-disable-next-line
     }, []);
     
   
     const register = async (e) => {
       e.preventDefault();
-      if (email == cemail) {
+      if (email === cemail) {
         const response = await fetch(`${backendApiURI}/auth/register`, {
           method: "POST",
           headers: {
@@ -87,7 +88,7 @@ const Signup = () => {
           {/* <p className='my-4 forgot'>Forgot Your Password?</p> */}
           <div className="buttonwrapper flex flex-col items-center justify-center w-[100%]">
             <button onClick={register} className='login-button bg-[#1ed760] p-[13px] md:w-[28%] w-[100%] rounded-3xl'>Sign up</button>
-            <p className='my-4'>Have an account? <Link className='text-[#36c066] login-link' to={'/login'}><a>Log in</a></Link>.</p>
+            <p className='my-4'>Have an account? <Link className='text-[#36c066] login-link' to={'/login'}><a href='/login'>Log in</a></Link>.</p>
           </div>
           {/* <hr className='w-[100%] my-6' /> */}
           {/* <p className='flex justify-center w-[100%] font-extrabold text-lg'>Don't have an account?</p> */}

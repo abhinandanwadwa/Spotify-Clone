@@ -17,6 +17,7 @@ const Login = () => {
     if (localStorage.getItem('auth-token')) {
       navigate('/');
     }
+    // eslint-disable-next-line
   }, []);
 
 
@@ -71,7 +72,7 @@ const Login = () => {
           </div>
           <hr className='w-[100%] my-6' />
           <p className='flex justify-center w-[100%] font-extrabold text-lg'>Don't have an account?</p>
-          <Link to={'/signup'} className='signup-button p-[10px] my-5 w-[100%] text-gray-500 font-bold font-sans flex justify-center items-center rounded-full border-gray-500 border-solid border-[1px] mb-4'><a>SIGN UP FOR SPOTIFY</a></Link>
+          <Link to={'/signup'} className='signup-button p-[10px] my-5 w-[100%] text-gray-500 font-bold font-sans flex justify-center items-center rounded-full border-gray-500 border-solid border-[1px] mb-4'><a href='/signup'>SIGN UP FOR SPOTIFY</a></Link>
         </div>
       </div>
     </div>
