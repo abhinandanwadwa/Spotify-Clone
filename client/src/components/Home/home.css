@@ -12,3 +12,15 @@
     font-size: 15px;
     letter-spacing: 0.5px;
 }
+
+.card {
+    transition: all 0.2s;
+}
+
+.card:hover {
+    background: #ffffff59;
+}
+
+#main-container {
+    transition: all 0.3s;
+}
