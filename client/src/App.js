@@ -3,14 +3,8 @@ import Login from './components/Login/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
-import { useEffect } from 'react';
 
 function App() {
-  useEffect(() => {
-    document.body.style.backgroundColor = 'black';
-  }, [])
-  
-
   return (
   <BrowserRouter>
     <Routes>
