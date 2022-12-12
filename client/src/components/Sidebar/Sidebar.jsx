@@ -5,7 +5,7 @@ import './sidebar.css';
 const Sidebar = () => {
   return (
     <>
-        <div className="sidebar fixed left-0 bg-[#121212] text-white h-[80vh] p-5 w-[19%] rounded-lg mx-2">
+        <div className="sidebar fixed left-0 bg-[#121212] text-white h-[82vh] p-5 w-[19%] rounded-lg mx-2">
             <div className="top-elements flex flex-col">
             <ul className='space-y-2'>
                 <li className='list-item-flex flex cursor-pointer items-center flex-row space-x-5'>

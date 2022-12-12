@@ -8,6 +8,7 @@ import './home.css'
 import Sidebar from '../Sidebar/Sidebar';
 import { useState } from 'react';
 import { ColorExtractor } from 'react-color-extractor'
+import Player from '../Player/Player';
 
 const Home = () => {
   const [greeting, setGreeting] = useState("");
@@ -85,6 +86,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    <Player />
     </>
   )
 }
