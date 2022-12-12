@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const dotenv = require('dotenv');
 const UserSchema = require('../models/User');
+const PlaylistSchema = require('../models/Playlist');
 const { body, validationResult } = require('express-validator');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
@@ -40,6 +41,12 @@ router.post('/register', [
             name: req.body.name,
             email: req.body.email,
             password: hash,
+        });
+
+        const likedSongsPlaylist = PlaylistSchema.create({
+            name: "Liked Songs",
+            authorId: newUser.id,
+            image: { public_id: 'https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png', url: 'https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png' }
         });
 
         let payload = {

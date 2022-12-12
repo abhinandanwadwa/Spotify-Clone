@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/playlist', require('./routes/playlist'));
 
 // Starting The Server
 app.listen(PORT, () => {

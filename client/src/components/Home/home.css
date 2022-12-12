@@ -26,5 +26,9 @@
 }
 
 .main-container {
-    background-image: linear-gradient(#1e1e1e, #121212);
+    /* background: radial-gradient(#203244eb, rgba(0,0,0,0), #203244eb); */
+    background: linear-gradient(#1e1e1e, rgba(0, 0, 0, 0) , #121212);
+    /* background-image: linear-gradient(#1e1e1e, #121212); */
+    background-color: #121212;
+    transition: all;
 }
