@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spotify
+  labels:
+    app: spotify
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spotify
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 4
+  template:
+    metadata:
+      labels:
+        app: spotify
+    spec:
+      containers:
+        - name: spotify
+          image: abhinandan1311/spotify-clone-server
+          ports:
+            - containerPort: 8181
+          envFrom:
+            - secretRef:
+                name: spotify-secret

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: spotify-secret
+stringData:
+  JWT_SECRET: asjdfdaks(*&)*(#&@*#($&jklsahfjaksfhd23423840987
+type: Opaque
